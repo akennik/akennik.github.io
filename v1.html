@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Przyciski</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+		}
+		.container {
+			display: flex;
+			height: 100vh;
+		}
+		.button {
+			width: 50%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 24px;
+			font-weight: bold;
+			color: #fff;
+			cursor: pointer;
+			transition: background-color 0.3s;
+		}
+		.button.red {
+			background-color: #f00;
+		}
+		.button.blue {
+			background-color: #00f;
+		}
+		.message {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 48px;
+			font-weight: bold;
+			color: #fff;
+			text-align: center;
+			background-color: rgba(0,0,0,0.7);
+			padding: 20px;
+			border-radius: 10px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="button red">Drużyna lewa</div>
+		<div class="button blue">Drużyna prawa</div>
+		<div class="message"></div>
+	</div>
+	<script>
+		const redButton = document.querySelector('.button.red');
+		const blueButton = document.querySelector('.button.blue');
+		const message = document.querySelector('.message');
+
+		let isRedTeamClicked = false;
+
+		function onRedButtonClick() {
+			if (!isRedTeamClicked) {
+				isRedTeamClicked = true;
+				message.innerText = 'Drużyna lewa!';
+				message.style.display = 'block';
+				blueButton.style.pointerEvents = 'none';
+				setTimeout(() => {
+					message.style.display = 'none';
+					blueButton.style.pointerEvents = 'auto';
+					isRedTeamClicked = false;
+				}, 5000); // Ukrycie wiadomości po 5 sekundach
+			}
+		}
+
+		function onBlueButtonClick() {
+			if (!isRedTeamClicked) {
+				message.innerText = 'Drużyna prawa!';
+				message.style.display = 'block';
+				redButton.style.pointerEvents = 'none';
+				setTimeout(() => {
+					message.style.display = 'none';
+					redButton.style.pointerEvents = 'auto';
+				}, 5000); // Ukrycie wiadomości po 5 sekundach
+			}
+		}
+
+		redButton.addEventListener('click', onRedButtonClick);
+		blueButton.addEventListener('click', onBlueButtonClick);
+	</script>
+</body>
+</html>
