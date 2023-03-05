@@ -1,10 +1,8 @@
-# akennik.github.io - projekt tymczasowy
-
-Witaj! To projekt tymczasowy na GitHubie, który umożliwia korzystanie z telefonu jako przycisków. Projekt składa się z trzech plików HTML: 
+Witaj! To projekt tymczasowy na GitHubie, który umożliwia korzystanie z telefonu jak z przycisków. Projekt składa się z trzech plików HTML: 
 
 - `v1.html` zawiera napis "Drużyna lewa" i "Drużyna prawa".
 - `v2.html` zawiera napis "Drużyna czerwona" i "Drużyna niebieska".
-- `v3.html` zawiera napis "Później która drużyna nacisła (lewa czy prawa)".
+- `v3.html` nie zawiera napisu, ale wyświetla informację o tym, która drużyna nacisła przycisk (lewa czy prawa lub czerwona czy niebieska).
 
 Projekt ten może być użyteczny w różnych sytuacjach, na przykład podczas rozgrywki w gry wymagające szybkiej reakcji czasowej.
 
